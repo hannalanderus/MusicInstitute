@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SCRT</title>
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Pacifico|Josefin+Slab|" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <span class="menu-btn" onclick="openNav()"></span>
+            <div class="hero">
+                <a href="index.html"><h1>Music Instituto</h1></a>
+            
+              
+              
+                <div id="myNav" class="overlay">
+
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                  
+                    <div class="overlayContent">
+                        <ul>
+                        <li id="artistclick" onclick="closeNav()">ARTISTS</li>
+                        <li id="albumsclick"onclick="closeNav()">ALBUMS</li>
+                        <li id="playlistclick"onclick="closeNav()">PLAYLISTS</li>
+
+                    </ul>
+                    <form class="search-container">
+                        <input type="text" id="searchInput" name="searchField" class="search-input"onchange="closeNav()" />
+                        <label for="search" class="search-icon"><img src="images/baseline-search-24px%20(1).svg"></label>
+                    </form>
+                    </div>
+                
+
+            </div>
+                
+            </div>
+
+
+        </nav>
+
+    </header>
+    <main>
+        <div class="contentalbums">
+            <div class="line"></div>
+              <h2 id="punchline">The illest music right now</h2>
+
+            <div id="scrolldiv">
+                <button class="btn draw-border">CLICK HERE TO ADD STUFF</button></div>
+
+            <div id="latest">
+            
+            </div>                
+
+            <div id="display">
+        </div>
+
+            <div id="commentForm">
+                <form action="#">
+                    <button id="closeWindow"><img src="images/close-24px.svg"></button>
+                    <h2>Leave a comment</h2>
+                    <input id="commentPlaylistId" type="text" placeholder="Playlist id" />
+                    <input id="commentUser" placeholder="Username" />
+                    <textarea id="commentOnPlaylist" placeholder="Comment"></textarea>
+                    <button id="submitComment" value="Add New Comment">Add new comment</button>
+                </form>
+            </div>
+
+        </div>
+        <div id="addNewWrapper">
+            <form id="addForm">
+                <h1>Add New Playlist</h1>
+                <li>
+                    <label for="title">Playlist title</label>
+                    <input id="playlistTitle" type="text" name="name">
+                </li>
+                <li>
+                    <label for="tracks">Tracks</label>
+                    <input id="playlistTracks" type="text" name="name">
+                </li>
+                <li>
+                    <label for="genre">Genre</label>
+                    <input id="playlistGenre" type="text" name="genre">
+                </li>
+
+                <li>
+                    <label for="imageLink">Image</label>
+                    <input id="playlistImageLink" type="text" name="imageLink" placeholder="http://">
+                </li>
+                <li>
+                    <label for="createdBy">Created By</label>
+                    <input id="playlistCreatedBy" type="text" name="createdBy">
+                </li>
+                <li class="ButtonList">
+                    <button id="submitPlaylist" value="Add New">Add Playlist</button>
+                </li>
+                <li>
+                    <label for="deletePlaylist">Delete Playlist with ID</label>
+                    <input id="deletePlaylist" type="text" name="name">
+                </li>
+                <li class="deleteButtonList">
+                    <button type="button" id="deleteButtonPlaylist">Delete</button>
+                </li>
+            </form>
+            <form id="addForm">
+                <h1>Add New Album</h1>
+                <li>
+                    <label for="albumName">Album title</label>
+                    <input id="albumName" type="text" name="name">
+                </li>
+                <li>
+                    <label for="genre">Genre</label>
+                    <input id="albumGenre" type="text" name="genre">
+                </li>
+                <li>
+                    <label for="artist">Choose Artist</label>
+
+                    <select id="albumArtist" type="text" name="Artist"> </select>
+
+
+                </li>
+                <li>
+                    <label for="born">Year</label>
+                    <input id="albumReleaseDate" type="number" name="release">
+                </li>
+                <li>
+                    <label for="spotifyLink">Spotify Link</label>
+                    <input id="albumSpotifyUrl" type="text" name="spotifyLink" placeholder="http://">
+                </li>
+                <li>
+                    <label for="imageLink">Image Link</label>
+                    <input id="albumImageLink" type="text" name="imageLink" placeholder="http://">
+                </li>
+                <li class="ButtonList">
+                    <button id="submitAlbum" value="Add New">Add Album</button>
+                </li>
+                <li>
+                    <label for="deleteAlbum">Delete Album with ID</label>
+                    <input id="deleteAlbum" type="text" name="name">
+                </li>
+                <li class="ButtonList">
+                <button type="button" id="deleteButtonAlbum">Delete</button>
+                </li>
+            </form>
+
+            <form id="addForm">
+                <h1>Add New Artist</h1>
+                <li>
+                    <label for="name">Artist</label>
+                    <input id="artistName" type="text" name="name" maxlength="100">
+                </li>
+                <li>
+                    <label for="born">Date Of Birth</label>
+                    <input id="bornDate" type="date" name="born" maxlength="100">
+                </li>
+                <li>
+                    <label for="genre">Genre</label>
+                    <input id="artistGenre" type="text" name="genre" maxlength="100">
+                </li>
+                <li>
+                    <label for="gender">Gender</label>
+                    <input id="artistGender" type="text" name="gender" maxlength="100">
+                </li>
+                <li>
+                    <label for="country">Country</label>
+                    <input id="bornCountry" type="text" name="country" maxlength="100">
+                </li>
+                <li>
+                    <label for="spotifyLink">Spotify Link</label>
+                    <input id="artistSpotifyUrl" type="text" name="spotifyLink" placeholder="http://">
+                </li>
+                <li>
+                    <label for="imageLink">Image</label>
+                    <input id="artistImageLink" type="text" name="imageLink" placeholder="http://">
+                </li>
+                <li class="ButtonList">
+                    <button id="submitArtist" value="Add new">Add Artist</button>
+                </li>
+                <li>
+                    <label for="deleteArtist">Delete Artist with ID</label>
+                    <input id="deleteArtist" type="text" name="name">
+                </li>
+                <li class="deleteButtonList">
+                    <button type="button" id="deleteButtonArtist">Delete</button>
+                </li>
+            </form>
+
+
+
+        </div>
+
+    </main>
+    <footer>
+    <button id="scrollUp"><img src="images/baseline-keyboard_arrow_up-24px.svg"></button>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
